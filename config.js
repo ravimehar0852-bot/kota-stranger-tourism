@@ -11,6 +11,7 @@ window.SITE = {
   // Firebase Console > Project settings > Web app se copy karo
   firebase: { apiKey: "YOUR_API_KEY", authDomain: "YOUR_APP.firebaseapp.com", projectId: "YOUR_PROJECT_ID", appId: "YOUR_APP_ID" },
   logo: "img/logo.png",                           // apna logo: img/logo.png upload karo aur yahan "img/logo.png" likho
+  logoShowName: false,                // true karo agar logo ke saath "KotaStranger" naam bhi dikhana hai
   heroImage: "img/hero.jpg",          // asli photo ke liye: img/hero.jpg upload karo aur yahan "img/hero.jpg" likho
   reviews: [],                        // sirf asli reviews: [{name:"Naam",trip:"Trip ka naam",text:"Review",rating:5}]
   categories: [
@@ -34,3 +35,4 @@ window.SITE = {
     {"id": "manali-rohtang-kasol", "title": "Manali Rohtang Pass Kasol Stranger Trip from Kota", "location": "Himachal Pradesh", "category": "Group Trips", "days": 8, "nights": 7, "difficulty": "Moderate", "price": 16999, "oldPrice": 24999, "seats": 16, "batch": "Coming soon", "image": "img/trips/manalinohtang.jpg", "overview": "Manali, Rohtang Pass aur Kasol ki scenic group trip strangers ke saath.", "highlights": ["Rohtang Pass", "Solang Valley", "Kasol aur Parvati Valley"], "itinerary": [{"title": "Day 1: Kota se departure", "details": "Kota se departure aur group ke saath safar shuru."}, {"title": "Day 2: Manali sightseeing", "details": "Manali ke local places aur free time."}], "inclusions": ["Transport as per itinerary", "Stay on sharing basis", "Trip captain aur group coordination"], "exclusions": ["Personal expenses", "Meals jo include nahi hain", "Travel insurance"], "carry": ["Valid government photo ID", "Warm clothes", "Personal medicines"]}
   ]
 };
+     
