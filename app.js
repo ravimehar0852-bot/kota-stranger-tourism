@@ -10,7 +10,9 @@ async function load(col, demo) {
   try { const s = await db.collection(col).get(); const r = s.docs.map(d => ({id: d.id, ...d.data()})); return r.length ? r : demo; }
   catch (e) { return demo; }
 }
-const img = t => t.image ? `background-image:url('${esc(t.image)}')` : '';
+const FB = 'linear-gradient(135deg,#374151,#8a6a00)';
+const img = t => `background-image:${t.image ? `url('${esc(t.image)}'),` : ''}${FB}`;
+const himg = t => `background-image:linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.8)),${t.image ? `url('${esc(t.image)}'),` : ''}${FB}`;
 const list = a => (a || []).map(x => `<li>${esc(x)}</li>`).join('');
 
 function card(t) {
@@ -61,8 +63,9 @@ async function home() {
     $('#trips').innerHTML = trips.slice(0, 6).map(card).join('');
     [['s-wk', 'Weekend Getaways'], ['s-tk', 'Himalayan Treks']].forEach(([id, c]) => { const r = trips.filter(t => t.category === c).slice(0, 4); $('#' + id).innerHTML = r.map(card).join(''); $('#' + id).closest('section').hidden = !r.length; });
   } else { const q0 = new URLSearchParams(location.search).get('q'); if (q0) $('#q').value = q0; draw(); }
-  const rv = db ? await load('reviews', []) : [];
-  if (rv.length && $('#rv')) { $('#rv').hidden = false; $('#rvl').innerHTML = rv.map(r => `<div class="rev"><div class="st">${'★'.repeat(r.rating || 5)}</div><p>“${esc(r.text)}”</p><b>${esc(r.name)}</b><div class="m">${esc(r.trip)}</div></div>`).join(''); }
+  if (!$('#rvl')) return;
+  const rv = await load('reviews', C.reviews || []);
+  $('#rvl').innerHTML = rv.length ? rv.map(r => `<div class="rev"><div class="st">${'★'.repeat(r.rating || 5)}</div><p>“${esc(r.text)}”</p><b>${esc(r.name)}</b><div class="m">${esc(r.trip)}</div></div>`).join('') : '<p class="m">Abhi koi review nahi. Pehla review aap likho!</p>';
 }
 
 // ---- trip detail ----
@@ -72,7 +75,7 @@ async function trip() {
   t = t || C.demo.find(x => x.id === id);
   if (!t) { $('#t').innerHTML = '<p class="m" style="padding:40px 20px">Trip nahi mili. <a href="index.html">Home par jao</a></p>'; return; }
   document.title = t.title + ' | ' + C.name;
-  $('#t').innerHTML = `<div class="thero" style="${img(t)}"><div><span class="tag y">${esc(t.category)}</span><h1>${esc(t.title)}</h1><p>📍 ${esc(t.location)}</p></div></div>
+  $('#t').innerHTML = `<div class="thero" style="${himg(t)}"><div><span class="tag y">${esc(t.category)}</span><h1>${esc(t.title)}</h1><p>📍 ${esc(t.location)}</p></div></div>
   <div class="wrap"><div class="facts"><div><small>Duration</small><b>${esc(t.nights)}N / ${esc(t.days)}D</b></div><div><small>Difficulty</small><b>${esc(t.difficulty)}</b></div><div><small>Starting</small><b>${inr(t.price)}</b></div><div><small>Seats left</small><b>${esc(t.seats)}</b></div>${t.batch ? `<div><small>Next batch</small><b>${esc(t.batch)}</b></div>` : ''}</div>
   <h2>Overview</h2><p>${esc(t.overview)}</p>
   ${t.highlights?.length ? `<h2>Highlights</h2><ul class="ck">${list(t.highlights)}</ul>` : ''}
@@ -91,7 +94,7 @@ function custom() {
     $('#cok').textContent = 'Request bhej di gayi. Hum jaldi contact karenge.'; e.target.reset(); };
 }
 async function stories() {
-  const rv = db ? await load('reviews', []) : [], gl = db ? await load('gallery', []) : [];
+  const rv = await load('reviews', C.reviews || []), gl = db ? await load('gallery', []) : [];
   $('#rvl').innerHTML = rv.length ? rv.map(r => `<div class="rev"><div class="st">${'★'.repeat(r.rating || 5)}</div><p>“${esc(r.text)}”</p><b>${esc(r.name)}</b><div class="m">${esc(r.trip)}</div></div>`).join('') : '<p class="m">Abhi koi review nahi. Pehla review aap likho!</p>';
   $('#gl').innerHTML = gl.length ? gl.map(g => `<figure><div class="gi" style="background-image:url('${esc(g.image)}')"></div><figcaption class="m">${esc(g.caption)}</figcaption></figure>`).join('') : '<p class="m">Photos jaldi aa rahi hain.</p>';
   $('#wr').onsubmit = async e => { e.preventDefault();
@@ -99,4 +102,4 @@ async function stories() {
     catch (x) { $('#wok').textContent = 'Review abhi nahi bhej paye. Thodi der baad try karo.'; } };
 }
 document.addEventListener('DOMContentLoaded', () => { shell(); $('#trips') ? home() : $('#t') ? trip() : $('#cf') ? custom() : $('#wr') && stories(); });
-                                   
+  
