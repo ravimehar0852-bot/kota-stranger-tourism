@@ -25,6 +25,7 @@ function card(t) {
 
 // ---- shared: menu, enquiry modal, floating buttons ----
 function shell() {
+  if (C.heroImage) document.documentElement.style.setProperty('--hero', `url('${C.heroImage}')`);
   document.querySelectorAll('[data-wa]').forEach(a => a.href = wa(`Hi ${C.name}, mujhe trip ki details chahiye.`));
   $('#menuBtn')?.addEventListener('click', () => $('#nav').classList.toggle('open'));
   document.body.insertAdjacentHTML('beforeend', `<a id="fab" target="_blank" aria-label="WhatsApp" href="${wa('Hi, mujhe trip ki details chahiye.')}">💬</a><div id="modal" hidden><form id="ef"><button type="button" id="mx" class="x">✕</button><h3>Request callback</h3>
@@ -98,3 +99,4 @@ async function stories() {
     catch (x) { $('#wok').textContent = 'Review abhi nahi bhej paye. Thodi der baad try karo.'; } };
 }
 document.addEventListener('DOMContentLoaded', () => { shell(); $('#trips') ? home() : $('#t') ? trip() : $('#cf') ? custom() : $('#wr') && stories(); });
+                                   
