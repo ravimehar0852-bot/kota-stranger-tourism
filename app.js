@@ -27,6 +27,7 @@ function card(t) {
 
 // ---- shared: menu, enquiry modal, floating buttons ----
 function shell() {
+  if (C.logo) document.querySelectorAll('.logo i').forEach(i => i.innerHTML = `<img src="${esc(C.logo)}" alt="${esc(C.name)}">`);
   if (C.heroImage) document.documentElement.style.setProperty('--hero', `url('${C.heroImage}')`);
   document.querySelectorAll('[data-wa]').forEach(a => a.href = wa(`Hi ${C.name}, mujhe trip ki details chahiye.`));
   $('#menuBtn')?.addEventListener('click', () => $('#nav').classList.toggle('open'));
