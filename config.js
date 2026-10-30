@@ -10,6 +10,7 @@ window.SITE = {
   facebook: "https://facebook.com/kotastrangertourism",
   // Firebase Console > Project settings > Web app se copy karo
   firebase: { apiKey: "YOUR_API_KEY", authDomain: "YOUR_APP.firebaseapp.com", projectId: "YOUR_PROJECT_ID", appId: "YOUR_APP_ID" },
+  heroImage: "img/hero.svg",          // asli photo ke liye: img/hero.jpg upload karo aur yahan "img/hero.jpg" likho
   categories: [
     ["Group Trips","👥"],["Weekend Getaways","🌅"],["Himalayan Treks","🏔️"],["Backpacking Trips","🎒"],
     ["Spiritual Trips","🕉️"],["Adventure Activities","🪂"],["Camping Experiences","⛺"],["Corporate Trips","💼"],["Customized Packages","🧭"]
