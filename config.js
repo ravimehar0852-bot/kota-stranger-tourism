@@ -11,7 +11,7 @@ window.SITE = {
   // Firebase Console > Project settings > Web app se copy karo
   firebase: { apiKey: "YOUR_API_KEY", authDomain: "YOUR_APP.firebaseapp.com", projectId: "YOUR_PROJECT_ID", appId: "YOUR_APP_ID" },
   logo: "img/logo.png",                           // apna logo: img/logo.png upload karo aur yahan "img/logo.png" likho
-  logoShowName: false,                // true karo agar logo ke saath "KotaStranger" naam bhi dikhana hai
+  logoShowName: true,                // true karo agar logo ke saath "KotaStranger" naam bhi dikhana hai
   heroImage: "img/hero.jpg",          // asli photo ke liye: img/hero.jpg upload karo aur yahan "img/hero.jpg" likho
   reviews: [],                        // sirf asli reviews: [{name:"Naam",trip:"Trip ka naam",text:"Review",rating:5}]
   categories: [
