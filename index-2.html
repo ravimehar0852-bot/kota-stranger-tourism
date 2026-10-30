@@ -1,0 +1,11 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Admin | Kota Stranger Tourism</title><link rel="stylesheet" href="../css/style.css"></head><body style="padding:0">
+<div id="login" style="min-height:100vh;display:grid;place-items:center;padding:20px"><form id="lf" class="box"><h3>Admin login</h3><input id="em" type="email" placeholder="Email" required><input id="pw" type="password" placeholder="Password" required><button class="btn y">Login</button><p id="err" class="m" style="color:#dc2626"></p></form></div>
+<div id="app" hidden>
+<div class="top"><b>Kota Stranger Admin</b><button id="out" class="btn y">Logout</button></div>
+<div class="tabs"><button class="btn o" data-tab="trips">Trips</button><button class="btn o" data-tab="enq">Enquiries</button><button class="btn o" data-tab="rev">Reviews</button></div>
+<div class="pane" id="p-trips"><button class="btn y" id="newTrip">+ Add trip</button><form id="tf" hidden></form><div id="tl"></div></div>
+<div class="pane" id="p-enq" hidden><div id="el"></div></div>
+<div class="pane" id="p-rev" hidden><form id="rf" class="box" style="max-width:none"><input id="rn" placeholder="Traveller name" required><input id="rt" placeholder="Trip name"><textarea id="rx" rows="3" placeholder="Review" required></textarea><select id="rs"><option>5</option><option>4</option><option>3</option></select><button class="btn y">Add review</button></form><div id="rl"></div></div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="../js/config.js"></script><script src="../js/admin.js"></script></body></html>
