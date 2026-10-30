@@ -4,7 +4,7 @@ body{font-family:"Plus Jakarta Sans",system-ui,sans-serif;color:var(--k);padding
 a{color:inherit;text-decoration:none}h1,h2,h3,h4{line-height:1.2}
 header{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between;padding:10px 20px}
 .logo{font-weight:800;font-size:1.2rem;display:flex;align-items:center;gap:8px}.logo i{font-style:normal;background:var(--y);border-radius:50%;width:34px;height:34px;display:grid;place-items:center}
-.logo b{color:#b88a00}
+.logo b{color:#fbb000}
 #menuBtn{background:none;border:0;font-size:1.7rem;cursor:pointer}
 #nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;padding:10px 20px 20px;border-bottom:1px solid #eee;flex-direction:column;gap:14px}
 #nav.open{display:flex}#nav a{font-weight:600}
@@ -45,3 +45,4 @@ input,textarea,select{width:100%;padding:11px;border:1px solid #d1d5db;border-ra
 #gl{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}#gl figure{margin:0}.gi{height:170px;border-radius:12px;background:#ddd center/cover}
 .sh{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:20px}.sh h2{margin:0}.sh a{font-weight:700}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px}.sv{color:#dc2626;font-weight:600;font-size:.9rem;margin-top:8px}#fab{position:fixed;right:16px;bottom:88px;width:56px;height:56px;border-radius:50%;background:var(--g);display:grid;place-items:center;font-size:1.6rem;box-shadow:0 4px 14px rgba(0,0,0,.25);z-index:45}@media(min-width:760px){#fab{bottom:24px}}
 .logo i{flex:0 0 auto;overflow:hidden}.logo.has-img i{display:block;width:56px;height:56px;background:none;border-radius:0}.logo i img{position:absolute;width:0;height:0}.logo.has-img i{position:relative}.logo.has-img i img{width:100%;height:100%;object-fit:contain;display:block}.logo.has-img.nm span{display:none}
+.logo span{color:#17233b;font-size:1.4rem;letter-spacing:-.4px;font-weight:800}.logo.has-img{gap:6px}
