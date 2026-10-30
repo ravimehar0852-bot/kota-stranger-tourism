@@ -25,9 +25,9 @@ section{padding:44px 20px;max-width:1100px;margin:auto}section h2{font-size:1.7r
 .off{position:absolute;top:12px;right:12px;background:#dc2626;color:#fff;font-size:.8rem;font-weight:700;padding:5px 12px;border-radius:99px}
 .cb{padding:16px}.cb h3{font-size:1.1rem;margin-bottom:4px}.m{color:var(--m);font-size:.9rem}.meta{font-size:.85rem;margin:8px 0 4px}
 .row{display:flex;justify-content:space-between;align-items:flex-end;margin-top:12px;gap:8px;flex-wrap:wrap}.price{font-size:1.4rem;font-weight:800}.price s{font-size:.9rem;color:var(--m);font-weight:400}.row .btn{padding:8px 14px}
-.bg{background:var(--l)}#rvl{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
-.rev{background:#fff;border-radius:14px;padding:18px}.st{color:var(--y);margin-bottom:6px}
-.cta{background:var(--k);color:#fff;border-radius:22px;text-align:center;padding:44px 20px;margin:20px}.cta h2{margin-bottom:8px}.cta .hbtn{justify-content:center}
+.bg{background:#ecfdf5}#rvl{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.rev{background:#fff;border-radius:16px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.06)}.rev p{margin:6px 0 14px}.rev b{display:block}.st{color:var(--y);margin-bottom:6px}
+.cta{background:#064e3b;color:#fff;border-radius:22px;text-align:center;padding:44px 20px;margin:20px}.cta h2{margin-bottom:8px}.cta .hbtn{justify-content:center}
 footer{background:#064e3b;color:#a7f3d0;padding:40px 20px}footer>div{max-width:1100px;margin:auto;display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}footer h4{color:#fff;margin-bottom:8px}footer a{display:block;padding:4px 0;color:#a7f3d0}footer a:hover{color:#fff}footer p{padding:3px 0}
 #bar{position:fixed;bottom:0;left:0;right:0;display:flex;gap:10px;padding:10px 14px;background:#fff;border-top:1px solid #eee;z-index:40}#bar .btn{flex:1}
 #modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:grid;place-items:center;z-index:60;padding:20px}#modal[hidden]{display:none}
@@ -44,4 +44,3 @@ input,textarea,select{width:100%;padding:11px;border:1px solid #d1d5db;border-ra
 @media(min-width:760px){#menuBtn{display:none}#nav{display:flex!important;flex-direction:row;position:static;padding:0;border:0}#cats{grid-template-columns:repeat(4,1fr)}#bar{display:none}body{padding-bottom:0}}
 #gl{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}#gl figure{margin:0}.gi{height:170px;border-radius:12px;background:#ddd center/cover}
 .sh{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:20px}.sh h2{margin:0}.sh a{font-weight:700}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px}.sv{color:#dc2626;font-weight:600;font-size:.9rem;margin-top:8px}#fab{position:fixed;right:16px;bottom:88px;width:56px;height:56px;border-radius:50%;background:var(--g);display:grid;place-items:center;font-size:1.6rem;box-shadow:0 4px 14px rgba(0,0,0,.25);z-index:45}@media(min-width:760px){#fab{bottom:24px}}
-  
